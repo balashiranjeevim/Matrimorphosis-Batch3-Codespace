@@ -4,6 +4,7 @@ import { RideSelection } from './features/rides/components/ride-selection/ride-s
 import { NearbyDrivers } from './features/rides/components/nearby-drivers/nearby-drivers';
 import { RideHistoryDetailsPage } from './features/rides/pages/ride-history-details-page/ride-history-details-page';
 import { RideHistory } from './features/rides/components/ride-history/ride-history';
+import { DriverApiDemo } from './features/drivers/components/driver-api-demo/driver-api-demo';
 export const routes: Routes = [
   {
     path: 'ride-history',
@@ -41,5 +42,13 @@ export const routes: Routes = [
       import('./features/dashboard/components/service-dashboard/service-dashboard').then(
         (m) => m.ServiceDashboard,
       ),
+  },
+  {
+    path: 'driver-api',
+    component: DriverApiDemo,
+  },
+  {
+    path: 'driver-api',
+    component: DriverApiDemo,
   },
 ];

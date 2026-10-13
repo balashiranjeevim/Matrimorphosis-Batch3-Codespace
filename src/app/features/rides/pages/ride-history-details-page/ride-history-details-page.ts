@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { RideBasedService } from '../../services/ride-based-service';
 
 @Component({
   selector: 'app-ride-history-details-page',
@@ -41,11 +42,14 @@ export class RideHistoryDetailsPage {
     },
   ];
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private objService: RideBasedService,
+  ) {} //Dependency injection
 
   ngOnInit() {
     this.rideId = this.activatedRoute.snapshot.params['id'];
 
-    this.selectedRide = this.rides.find((ride) => ride.id === this.rideId);
+    this.selectedRide = this.objService.getRideById(this.rideId);
   }
 }
