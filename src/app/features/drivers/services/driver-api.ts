@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class DriverApi {
-  private apiUrl = 'https://6ace0909f338359cf1c2eeb8.mockapi.io/api/Angularbatch3/';
+  private apiUrl = 'https://6ace0909f338359cf1c2eeb8.mockapi.io/api/Angularbatch3/drivers';
   constructor(private http: HttpClient) {}
 
   getDrivers() {

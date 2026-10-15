@@ -1,0 +1,18 @@
+import { Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { Observable } from 'rxjs';
+import { Tracking } from '../../services/tracking';
+
+@Component({
+  selector: 'app-ride-status-board',
+  imports: [AsyncPipe],
+  templateUrl: './ride-status-board.html',
+  styleUrl: './ride-status-board.css',
+})
+export class RideStatusBoard {
+  liveDriverData$!: Observable<any>;
+
+  constructor(private trackingService: Tracking) {
+    this.liveDriverData$ = this.trackingService.getLiveDriverUpdates();
+  }
+}

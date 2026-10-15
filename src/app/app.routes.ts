@@ -51,4 +51,28 @@ export const routes: Routes = [
     path: 'driver-api',
     component: DriverApiDemo,
   },
+  {
+    path: 'live-tracking',
+
+    loadComponent: () =>
+      import('./features/tracking/components/live-driver-tracker/live-driver-tracker').then(
+        (m) => m.LiveDriverTracker,
+      ),
+  },
+  {
+    path: 'ride-status-board',
+
+    loadComponent: () =>
+      import('./features/tracking/components/ride-status-board/ride-status-board').then(
+        (m) => m.RideStatusBoard,
+      ),
+  },
+  {
+    path: 'nearby-driver-count',
+
+    loadComponent: () =>
+      import('./features/tracking/components/nearby-driver-counter/nearby-driver-counter').then(
+        (m) => m.NearbyDriverCounter,
+      ),
+  },
 ];
